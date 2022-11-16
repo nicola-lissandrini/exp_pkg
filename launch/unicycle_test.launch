@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+
+<launch>
+	<include file="$(find exp_pkg)/launch/arena_sim.launch" />
+	<include file="$(find unicycle_control)/launch/unicycle_control.launch" />
+</launch>

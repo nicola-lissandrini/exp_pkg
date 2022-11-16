@@ -1,0 +1,25 @@
+napvig:
+  topics:
+    subs:
+      measures: /turtlebot/scan
+      odom: /turtlebot/odom
+      target: /target/pose
+    pubs:
+      command: /cmd_pose
+    output_prefix: /napvig/outputs
+    outputs:
+      - measures
+      - pose_debug
+      - values
+      - gradients
+      - history
+      - target_in_measures
+
+unicycle_control:
+  topics:
+    reference_sub: /cmd_pose
+    cmd_vel_pub: /turtlebot/cmd_vel
+
+target:
+  rate: 10                            # shouldn't be here, but... 
+  target_pub: /target/pose
