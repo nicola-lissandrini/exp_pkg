@@ -6,6 +6,7 @@ napvig:
       target: /target/pose
     pubs:
       command: /cmd_pose
+      command_world: /cmd_pose_world
     output_prefix: /napvig/outputs
     outputs:
       - measures
@@ -20,6 +21,6 @@ unicycle_control:
     reference_sub: /cmd_pose
     cmd_vel_pub: /turtlebot/cmd_vel
 
-target:
-  rate: 10                            # shouldn't be here, but... 
+target:                                   # shouldn't be here, but... 
+  rate: 10                            
   target_pub: /target/pose

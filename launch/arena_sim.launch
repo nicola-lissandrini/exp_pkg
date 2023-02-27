@@ -1,8 +1,11 @@
 <?xml version="1.0" ?>
 
 <launch>
+	<arg name="scenario" value="arena" />
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
-		<arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot.world" />
+		<arg if="$(eval arg('scenario') == 'poles')" name="world_name" value="/home/nicola/ros/napvig3_ws/src/exp_data/poles.world" />
+		<arg if="$(eval arg('scenario') == 'walls')" name="world_name" value="/home/nicola/ros/napvig3_ws/src/exp_data/walls.world" />
+		<arg if="$(eval arg('scenario') == 'arena')" name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world" />
 		<arg name="verbose" value="true" />
 	</include>
 
