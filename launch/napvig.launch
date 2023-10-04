@@ -11,7 +11,7 @@
 	<include file="$(find unicycle_control)/launch/unicycle_control.launch" />
 
 	<!-- Main napvig algorithms -->
-	<!--include file="$(find napvig)/launch/napvig.launch" /-->
+	<include file="$(find napvig)/launch/napvig.launch" />
 
 	<!-- Target -->
 	<node type="target.py" name="target" pkg="exp_pkg" output="screen" />
