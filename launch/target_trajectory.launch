@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+
+<launch>
+	
+	<node type="target_trajectory" name="target_trajectory" pkg="exp_pkg" output="screen" required="true">
+		<param name="/trajectory_filename" value="$(find exp_pkg)/data/target_trajectory.json" />
+	</node>
+</launch>

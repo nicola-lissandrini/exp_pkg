@@ -1,10 +1,14 @@
 <?xml version="1.0"?>
 
 <launch>
-	<rosparam command="load" file="$(find exp_pkg)/config/ros_configuration.yaml" />
-	<include file="$(find exp_pkg)/launch/arena_sim.launch" />
+	<arg name="rosbag" value="false" />
 
-	<!--include file="$(find unicycle_control)/launch/unicycle_control.launch" /-->
+	<rosparam command="load" file="$(find exp_pkg)/config/ros_configuration.yaml" />
+	<include unless="$(arg rosbag)" file="$(find exp_pkg)/launch/arena_sim.launch" />
+
+	<node if="$(arg rosbag)" pkg="rosbag" type="play" name="player" output="log" args="-l --clock /home/nicola/ros/napvig3_ws/src/napvig4/bagfiles/default.bag" />
+
+	<include file="$(find unicycle_control)/launch/unicycle_control.launch" />
 
 	<!-- Main napvig algorithms -->
 	<!--include file="$(find napvig)/launch/napvig.launch" /-->

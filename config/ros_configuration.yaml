@@ -4,6 +4,8 @@ napvig:
       measures: /turtlebot/scan
       odom: /turtlebot/odom
       target: /target/pose
+      external_clock: /external_clock
+      unset_target: /target/unset
     pubs:
       command: /cmd_pose
       command_world: /cmd_pose_world
@@ -15,6 +17,7 @@ napvig:
       - gradients
       - history
       - target_in_measures
+      - string
 
 unicycle_control:
   topics:

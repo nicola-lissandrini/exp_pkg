@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 
 <launch>
-	<arg name="scenario" value="arena" />
+	<arg name="scenario" value="walls" />
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg if="$(eval arg('scenario') == 'poles')" name="world_name" value="/home/nicola/ros/napvig3_ws/src/exp_data/poles.world" />
 		<arg if="$(eval arg('scenario') == 'walls')" name="world_name" value="/home/nicola/ros/napvig3_ws/src/exp_data/walls.world" />
